@@ -3,6 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("current-year").textContent =
     new Date().getFullYear();
 
+  // Form submission handling
+  const contactForm = document.querySelector(".contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      // Let the form submit normally
+      // After submission, clear the form
+      setTimeout(() => {
+        contactForm.reset();
+      }, 1000); // Wait 1 second to ensure form submission is complete
+    });
+  }
+
   // Mobile menu toggle
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navbar = document.querySelector(".navbar");
